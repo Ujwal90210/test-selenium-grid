@@ -1,0 +1,42 @@
+{
+  "name": "operadriver",
+  "description": "Selenium WebDriver for Opera",
+  "long_description": "# Selenium OperaDriver Cookbook\n\n[![Cookbook Version](http://img.shields.io/cookbook/v/operadriver.svg?style=flat-square)][supermarket]\n[![Build Status](http://img.shields.io/travis/dhoer/chef-operadriver.svg?style=flat-square)][travis]\n\n[supermarket]: https://supermarket.chef.io/cookbooks/operadriver\n[travis]: https://travis-ci.org/dhoer/chef-operadriver\n\nInstalls OperaChromiumDriver (https://github.com/operasoftware/operachromiumdriver). \n\n## Requirements\n\n- Chef 11.16+\n- Chrome (this cookbook does not install Chrome)\n\n### Platforms\n\n- Ubuntu\n- Windows\n\n### Cookbooks\n\n- windows \n\n## Usage\n\nInclude recipe in a run list or cookbook to install OperaChromiumDriver.\n\n### Attributes\n\n- `node['operadriver']['version']` - Version to download.\n- `node['operadriver']['url']` -  URL download prefix.\n- `node['operadriver']['windows']['home']` - Home directory for windows. Default `%SYSTEMDRIVE%\\operadriver`.\n- `node['operadriver']['unix']['home']` - Home directory for both linux and macosx. Default `/opt/operadriver`.\n\n#### Install selenium node with opera capability\n\n```ruby\ninclude_recipe 'opera'\ninclude_recipe 'operadriver'\n\nnode.set['selenium']['node']['capabilities'] = [\n  {\n    browserName: 'operablink',\n    maxInstances: 1,\n    version: opera_version,\n    seleniumProtocol: 'WebDriver'\n  }\n]\n\ninclude_recipe 'selenium::node'\n```\n\n## Getting Help\n\n- Ask specific questions on [Stack Overflow](http://stackoverflow.com/questions/tagged/operadriver).\n- Report bugs and discuss potential features in [Github issues](https://github.com/dhoer/chef-operadriver/issues).\n\n## Contributing\n\nPlease refer to [CONTRIBUTING](https://github.com/dhoer/chef-operadriver/graphs/contributors).\n\n## License\n\nMIT - see the accompanying [LICENSE](https://github.com/dhoer/chef-operadriver/blob/master/LICENSE.md) file for \ndetails.\n",
+  "maintainer": "Dennis Hoer",
+  "maintainer_email": "dennis.hoer@gmail.com",
+  "license": "MIT",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "windows": ">= 0.0.0"
+  },
+  "dependencies": {
+    "windows": "~> 1.0"
+  },
+  "recommendations": {
+
+  },
+  "suggestions": {
+
+  },
+  "conflicting": {
+
+  },
+  "providing": {
+
+  },
+  "replacing": {
+
+  },
+  "attributes": {
+
+  },
+  "groupings": {
+
+  },
+  "recipes": {
+
+  },
+  "version": "1.0.0",
+  "source_url": "https://github.com/dhoer/chef-operadriver",
+  "issues_url": "https://github.com/dhoer/chef-operadriver/issues"
+}

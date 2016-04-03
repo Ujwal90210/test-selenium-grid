@@ -1,0 +1,41 @@
+{
+  "name": "macosx_gui_login",
+  "description": "Login to Mac OS X GUI",
+  "long_description": "# Mac OS X GUI Login Cookbook\n\n[![Cookbook Version](http://img.shields.io/cookbook/v/macosx_gui_login.svg?style=flat-square)][cookbook]\n[![Build Status](http://img.shields.io/travis/dhoer/chef-macosx_gui_login.svg?style=flat-square)][travis]\n[![GitHub Issues](http://img.shields.io/github/issues/dhoer/chef-macosx_gui_login.svg?style=flat-square)]\n[github]\n\n[cookbook]: https://supermarket.chef.io/cookbooks/macosx_gui_login\n[travis]: https://travis-ci.org/dhoer/chef-macosx_gui_login\n[github]: https://github.com/dhoer/chef-macosx_gui_login/issues\n\nThis cookbook logs into Mac OS X GUI via AppleScript.\n\n## Requirements\n\n- Chef 12 or higher (you can use Chef 11, but sensitive attribute won't work)\n\n### Platforms\n\n- Mac OS X - Mountain Lion (10.8) or higher\n\n## Usage\n\nInclude cookbook as a dependency before calling `macosx_gui_login` resource.\n\n### Actions\n\n- `run` - Logs into GUI.\n\n### Attributes\n\n- `username` (required) -  Username to login as. Defaults to the name of the resource block.\n- `password` (required) -  Password of user.\n\n### Examples\n\nLogin as vagrant user:\n\n```ruby\nmacosx_gui_login 'login to vagrant user' do\n  username 'vagrant'\n  password 'vagrant'\n  action :run\nend\n```\n\n## ChefSpec Matchers\n\nThis cookbook includes custom [ChefSpec](https://github.com/sethvargo/chefspec) matchers you can use to test \nyour own cookbooks.\n\nExample Matcher Usage\n\n```ruby\nexpect(chef_run).to run_macosx_gui_login('login to vagrant user').with(\n  username: 'vagrant'\n  password: 'vagrant'\n)\n```\n      \nCookbook Matchers\n\n- run_macosx_gui_login(resource_name)\n\n## Getting Help\n\n- Ask specific questions on [Stack Overflow](http://stackoverflow.com/questions/tagged/chef-macosx_gui_login).\n- Report bugs and discuss potential features in\n[Github issues](https://github.com/dhoer/chef-macosx_gui_login/issues).\n\n## Contributing\n\nPlease refer to [CONTRIBUTING](https://github.com/dhoer/chef-macosx_gui_login/blob/master/CONTRIBUTING.md).\n\n## License\n\nMIT - see the accompanying [LICENSE](https://github.com/dhoer/chef-macosx_gui_login/blob/master/LICENSE.md) \nfile for details.\n",
+  "maintainer": "Dennis Hoer",
+  "maintainer_email": "dennis.hoer@gmail.com",
+  "license": "MIT",
+  "platforms": {
+    "mac_os_x": ">= 10.8"
+  },
+  "dependencies": {
+    "privacy_services_manager": "~> 1.0"
+  },
+  "recommendations": {
+
+  },
+  "suggestions": {
+
+  },
+  "conflicting": {
+
+  },
+  "providing": {
+
+  },
+  "replacing": {
+
+  },
+  "attributes": {
+
+  },
+  "groupings": {
+
+  },
+  "recipes": {
+
+  },
+  "version": "1.0.1",
+  "source_url": "",
+  "issues_url": ""
+}

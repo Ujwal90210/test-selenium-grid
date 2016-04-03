@@ -1,0 +1,29 @@
+---
+driver:
+  name: vagrant
+  provider: vmware_fusion
+  customize:
+      memory: 2048
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: macosx-10.10
+    driver:
+      box: dhoer/macosx-10.10
+suites:
+  - name: macosx_autologin_default
+    run_list:
+      - recipe[macosx_autologin::default]
+    attributes:
+      macosx_autologin:
+        username: 'vagrant'
+        password: 'vagrant'
+
+  - name: macosx_autologin_remove
+    run_list:
+      - recipe[macosx_autologin::default]
+    attributes:
+      macosx_autologin:
+        enable: false
